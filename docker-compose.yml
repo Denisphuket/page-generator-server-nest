@@ -1,0 +1,19 @@
+version: '3.9'
+
+services:
+  telegaserver.tradeplanet.me:
+    container_name: telegaserver.tradeplanet.me
+    build:
+      context: .
+    env_file:
+      - .env.production
+    ports:
+      - "34000:34000"
+    restart: always
+    networks:
+      - my-network
+
+
+networks:
+  my-network:
+    external: true
